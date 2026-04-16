@@ -1,170 +1,175 @@
-CineCache
+# CineCache
 
 A distributed caching system implemented in C++ for high-performance data retrieval with movie database integration.
 
- Overview
+---
+
+## Overview
 
 CineCache is a sophisticated caching layer designed to efficiently manage and retrieve movie data using advanced cache management techniques, consistent hashing for distributed systems, and eviction policies for optimal memory utilization.
 
- Features
+---
 
-- LRU (Least Recently Used) Cache - Automatic eviction of least-used items
-- TTL (Time-To-Live) Support - Configurable expiration for cache entries
-- Consistent Hashing - Enables distributed caching across multiple nodes
-- Hash Table Implementation - Fast O(1) lookups for cache operations
-- Doubly Linked List - Core data structure for LRU ordering
-- Movie Database - Integrated IMDB movie database for testing
-- Eviction Policies - Flexible policies for memory management
-- Interactive UI - Terminal-based interface for cache operations
+## Features
 
- Download & Installation
+* **LRU (Least Recently Used) Cache** – Automatic eviction of least-used items
+* **Consistent Hashing** – Enables distributed caching across multiple nodes
+* **Hash Table Implementation** – Fast O(1) lookups for cache operations
+* **Doubly Linked List** – Core data structure for LRU ordering
+* **Movie Database Integration** – IMDB dataset for testing
+* **Flexible Eviction Policies** – Efficient memory management
+* **Interactive UI** – Terminal-based interface for cache operations
 
- Prerequisites
-- Git
-- C++ compiler (GCC, Clang, or MSVC)
-- CMake 3.10+
-- Python 3.7+ (for data extraction)
+---
 
- Cloning the Repository
+## Download & Installation
 
- Quick Start
+### Prerequisites
 
-1. Install Dependencies (macOS):
+* Git
+* C++ Compiler (GCC, Clang, or MSVC)
+* CMake 3.10+
+* Python 3.7+ (for data extraction)
 
-2. Download Movie Database (Optional):
+### Clone the Repository
 
-3. Build the Project:
+```bash
+git clone https://github.com/yourusername/CineCache.git
+cd CineCache
+```
 
-4. Run CineCache:
+---
 
- Project Structure
+## Quick Start
 
- Building
+### 1. Install Dependencies (macOS)
 
- Prerequisites
-- C++ compiler (GCC, Clang, or MSVC)
-- CMake 3.10+
-- Python 3 (for data extraction)
+```bash
+brew install cmake
+```
 
- Build Instructions
+### 2. Build the Project
 
-Using the build script:
+```bash
+./build.sh
+```
 
-Manual build with CMake:
+Or manually:
 
-Build on Different Platforms:
+```bash
+mkdir -p build && cd build
+cmake ..
+make
+```
 
-Linux (Ubuntu/Debian):
+### 3. Run CineCache
 
-macOS:
+```bash
+./build/bin/cinecache
+```
 
-Windows (with Visual Studio):
+---
 
- Running
+## Project Structure
 
-Run the compiled executable:
+```
+CineCache/
+├── src/
+│   ├── main.cpp
+│   ├── cache/
+│   ├── common/
+│   ├── data_structures/
+│   ├── database/
+│   └── hashing/
+├── engine/
+├── data/
+├── CMakeLists.txt
+├── build.sh
+├── extract_movies.py
+└── README.md
+```
 
- Data Processing
+---
 
-Extract and process movie data from IMDB CSV:
+### Platform-Specific Builds
 
-This generates the movies_db.txt file used by the cache system.
+#### Linux (Ubuntu/Debian)
 
- Component Documentation
+```bash
+sudo apt-get install build-essential cmake python3
+./build.sh
+```
 
- Cache Layer (src/cache/)
-- LRU Cache: Implements Least Recently Used eviction policy with automatic cleanup of stale entries
-- Supports TTL (Time-To-Live) for automatic expiration
+#### macOS
 
- Data Structures (src/data_structures/)
-- Hash Table: O(1) average-case lookup, insertion, and deletion
-- Doubly Linked List: Maintains insertion/access order for LRU operations
+```bash
+./build.sh
+```
 
- Hashing (src/hashing/)
-- Consistent Hashing: Distributes cache across nodes while minimizing key redistribution during node changes
-- Hash Functions: Optimized hash functions for key mapping
+#### Windows (Visual Studio)
 
- Database (src/database/)
-- Simulated Database: Movie database with IMDB data
-- Provides realistic data retrieval scenarios for cache testing
+```cmd
+./build.bat
+```
 
- Engine (engine/)
-- Cache Nodes: Individual cache units in the distributed system
-- UI: Terminal interface for cache operations and monitoring
-- Eviction Policies: Configurable strategies for cache memory management
-- System: Coordinates all caching operations
+---
 
- Usage Examples
+## Running
 
-The system provides an interactive interface for:
-- Adding movies to cache
-- Querying cached data
-- Monitoring cache hit/miss rates
-- Viewing eviction statistics
-- Managing cache nodes
+```bash
+./build/bin/cinecache
+```
 
- Configuration
+---
 
-Edit CMakeLists.txt to customize:
-- Build options and flags
-- Optimization levels
-- Debug/Release builds
-- Target platform-specific settings
+## Component Documentation
 
- Performance Characteristics
+### Cache Layer (`src/cache/`)
 
-- Cache Lookup: O(1) average time complexity
-- Insert/Update: O(1) amortized
-- Eviction: O(1) with LRU policy
-- Consistent Hashing: O(log n) node lookup
+* LRU Cache with automatic eviction
+* TTL support for expiration
 
- Troubleshooting
+### Data Structures (`src/data_structures/`)
 
- Build Errors
-- Ensure CMake version is 3.10 or higher: cmake --version
-- Verify C++ compiler is installed and in PATH
-- Try cleaning build directory: rm -rf build && ./build.sh
+* Hash Table – O(1) operations
+* Doubly Linked List – Maintains LRU order
 
- Runtime Issues
-- Check that data/movies_db.txt exists (run extract_movies.py if missing)
-- Verify sufficient disk space for movie database
-- Check terminal compatibility for UI rendering
+### Hashing (`src/hashing/`)
 
- Future Enhancements
+* Consistent Hashing for distributed nodes
+* Optimized hash functions
 
-- Multi-threaded cache operations
-- Distributed node communication
-- Advanced statistics and monitoring
-- Configurable serialization formats
-- Persistence layer support
-- REST API interface
-- Web-based dashboard
+### Database (`src/database/`)
 
- Contributing
+* Simulated IMDB movie database
+* Realistic testing scenarios
 
-1. Fork the repository
-2. Create a feature branch (git checkout -b feature/AmazingFeature)
-3. Commit changes (git commit -m 'Add AmazingFeature')
-4. Push to branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
+### Engine (`engine/`)
 
- License
+* Cache Nodes for distributed system
+* Terminal UI
+* Configurable eviction policies
+* System coordination layer
 
-Internal project - CineCache System
+---
 
- Support
 
-For issues, questions, or suggestions, please open an issue on the repository.
+## Future Enhancements
 
- Author
+* Multi-threaded cache operations
+* Distributed node communication
+* Advanced monitoring & analytics
+* Serialization support
+* Persistence layer
+* REST API
+* Web dashboard
 
-Development Team
+---
 
- Changelog
 
- v1.0.0
-- Initial release
-- Core LRU cache implementation
-- Consistent hashing support
-- Movie database integration
-- Interactive terminal UI
+## Support
+
+For issues or suggestions, open an issue in the repository.
+
+---
+
