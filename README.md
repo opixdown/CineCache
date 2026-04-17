@@ -1,35 +1,35 @@
-# CineCache
+# 🎬 CineCache
 
 A distributed caching system implemented in C++ for high-performance data retrieval with movie database integration.
 
 ---
 
-## Overview
+## 📖 Overview
 
 CineCache is a sophisticated caching layer designed to efficiently manage and retrieve movie data using advanced cache management techniques, consistent hashing for distributed systems, and eviction policies for optimal memory utilization.
 
 ---
 
-## Features
+## ✨ Features
 
-* **LRU (Least Recently Used) Cache** – Automatic eviction of least-used items
-* **Consistent Hashing** – Enables distributed caching across multiple nodes
-* **Hash Table Implementation** – Fast O(1) lookups for cache operations
-* **Doubly Linked List** – Core data structure for LRU ordering
-* **Movie Database Integration** – IMDB dataset for testing
-* **Flexible Eviction Policies** – Efficient memory management
-* **Interactive UI** – Terminal-based interface for cache operations
+* 🔄 **LRU (Least Recently Used) Cache** – Automatic eviction of least-used items
+* 🌐 **Consistent Hashing** – Enables distributed caching across multiple nodes
+* ⚡ **Hash Table Implementation** – Fast O(1) lookups for cache operations
+* 🔗 **Doubly Linked List** – Core data structure for LRU ordering
+* 🎥 **Movie Database Integration** – IMDB dataset for testing
+* 🧹 **Flexible Eviction Policies** – Efficient memory management
+* 🖥️ **Interactive UI** – Terminal-based interface for cache operations
 
 ---
 
-## Download & Installation
+## 📦 Download & Installation
 
 ### Prerequisites
 
-* Git
-* C++ Compiler (GCC, Clang, or MSVC)
-* CMake 3.10+
-* Python 3.7+ (for data extraction)
+* 🔧 Git
+* ⚙️ C++ Compiler (GCC, Clang, or MSVC)
+* 📐 CMake 3.10+
+* 🐍 Python 3.7+ (for data extraction)
 
 ### Clone the Repository
 
@@ -40,7 +40,7 @@ cd CineCache
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### 1. Install Dependencies (macOS)
 
@@ -70,7 +70,7 @@ make
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 CineCache/
